@@ -1,0 +1,9 @@
+<h1> Cookbook </h1>
+
+<h1> Categories </h1>
+
+<ul>
+  <% @categories.each do |category| %>
+  <li><%= category.name.capitalize %></li>
+  <% end %>
+</ul>

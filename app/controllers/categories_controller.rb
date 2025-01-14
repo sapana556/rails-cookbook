@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    raise
   end
 
   def new
@@ -19,6 +20,11 @@ class CategoriesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
   end
 
 private

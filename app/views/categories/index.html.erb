@@ -1,9 +1,12 @@
 <h1> Cookbook </h1>
 
 <h1> Categories </h1>
+<%= link_to "create a new category", new_category_path %>
 
 <ul>
   <% @categories.each do |category| %>
-  <li><%= category.name.capitalize %></li>
+  <li>
+      <%= link_to category.name.capitalize, category_path(category) %>
+  </li>
   <% end %>
 </ul>

@@ -1,12 +1,24 @@
-<h1> Cookbook </h1>
+<div class="banner" style="background-image: url(<%= image_path "240_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns.jpg" %>)">
+  <div>
+    <h1> Cookbook </h1>
+    <h3> Save your favourite recipes </h3>
+  </div>
+</div>
 
-<h1> Categories </h1>
-<%= link_to "create a new category", new_category_path %>
+<div class="container">
 
-<ul>
-  <% @categories.each do |category| %>
-  <li>
-      <%= link_to category.name.capitalize, category_path(category) %>
-  </li>
-  <% end %>
-</ul>
+  <div class="info-container mt-2">
+  <h3> List of Categories </h3>
+  <p class="btn btn-warning mx-3"><%= link_to "+ New Category", new_category_path %> </p>
+  </div>
+
+    <div class ="cards">
+      <% @categories.each do |category| %>
+        <div class="card-category" style="background-image: url(<%= image_path "240_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns.jpg" %>)">
+          <%= link_to category.name.capitalize, category_path(category) %>
+        </div>
+      <% end %>
+    </div>
+
+
+</div>
